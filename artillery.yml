@@ -1,0 +1,14 @@
+config:
+  target: 'http://localhost:3000'
+  phases:
+    - duration: 60
+      arrivalRate: 20
+scenarios:
+  - flow:
+      - post:
+          url: "/todos"
+          json:
+            title: "task 1"
+            description: "Description of Task 1"
+            completed: false
+            created_at: null
