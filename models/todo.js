@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const todoSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: String,
-  completed: { type: Boolean, default: false },
+  completed: { type: Boolean, },
   created_at: { type: Date, default: Date.now }
 });
 
