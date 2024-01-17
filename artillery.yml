@@ -10,5 +10,5 @@ scenarios:
           json:
             title: "task 1"
             description: "Description of Task 1"
-            completed: false
+            completed: "boolean"
             created_at: null
