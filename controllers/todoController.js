@@ -27,8 +27,8 @@ exports.getAllTodos = async (req, res, next) => {
 // POST /todos: Create a new todo item
 exports.createTodo = async (req, res, next) => {
   try {
-    const { title, description } = req.body;
-    const newTodo = new todo({ title, description });
+    const { title, description, completed} = req.body;
+    const newTodo = new todo({ title, description, completed });
     await newTodo.save();
     res.status(200).json(newTodo);
   } catch (error) {
