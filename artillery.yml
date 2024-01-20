@@ -12,3 +12,4 @@ scenarios:
             description: "Description of Task 1"
             completed: "boolean"
             created_at: null
+            updated_at: null

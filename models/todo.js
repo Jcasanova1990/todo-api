@@ -5,7 +5,8 @@ const todoSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: String,
   completed: Boolean,
-  created_at: { type: Date, default: Date.now }
+  created_at: { type: Date, default: Date.now },
+  updated_at: { type: Date, default: Date.now }
 });
 
 todoSchema.pre('save', async function(next) {
