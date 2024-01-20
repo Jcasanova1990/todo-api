@@ -70,7 +70,7 @@ exports.updateTodoById = async (req, res, next) => {
 };
 
 // DELETE /todos/:id: Delete a specific todo item identified by its ID
-exports.deleteTodoById = async (req, res, next) => {
+exports.destroyTodoById = async (req, res, next) => {
   try {
     const deletedTodo = await todo.findByIdAndDelete(req.params.id);
     if (!deletedTodo) {

@@ -15,6 +15,6 @@ router.get('/:id', todoController.getTodoById);
 router.put('/:id', todoController.updateTodoById);
 
 // DELETE /todos/:id: Delete a specific todo item by its ID
-router.delete('/:id', todoController.deleteTodoById);
+router.delete('/:id', todoController.destroyTodoById);
 
 module.exports = router;
