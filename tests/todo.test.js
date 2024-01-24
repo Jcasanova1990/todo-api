@@ -5,7 +5,7 @@ const app = require('../app');
 const server = app.listen(8080, () => console.log('Testing on PORT 8080'));
 const Todo = require('../models/todo');
 
-let createdTodo; // Store the created todo for subsequent tests
+let createdTodo; 
 
 beforeAll(async () => {
   await mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -30,7 +30,7 @@ describe('Test the todos endpoints', () => {
     expect(response.body.title).toEqual(todoData.title);
     expect(response.body.description).toEqual(todoData.description);
     expect(response.body).toHaveProperty('_id');
-    createdTodo = response.body; // Save the created todo for subsequent tests
+    createdTodo = response.body; 
   });
 
   test('GET /todos/:id - Get a specific todo item', async () => {
@@ -51,8 +51,8 @@ describe('Test the todos endpoints', () => {
   test('DELETE /todos/:id - Delete a specific todo item', async () => {
     const response = await request(app).delete(`/todos/${createdTodo._id}`);
     expect(response.statusCode).toBe(200);
-    expect(response.body.title).toEqual('Updated test'); // Adjusted expectation
-    expect(response.body.description).toEqual('Updated description'); // Adjusted expectation
+    expect(response.body.title).toEqual('Updated test'); 
+    expect(response.body.description).toEqual('Updated description'); 
   });
   
 });
